@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    test express
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+    $(function(){
+        var index=0;
+        function getdata(){
+            $.ajax({
+                url:"/partial",
+                beforeSend: function(request) {
+                    request.setRequestHeader("Range", "bytes="+index+"-"+(index+10));
+                },
+                success:function(data){
+                    if(data){
+                        console.log(index,index+10,":",data);
+                        index=index+10;
+                        getdata();
+                    }
+                }
+            });
+        }
+        getdata();
+    });
+</script>
+</html>
