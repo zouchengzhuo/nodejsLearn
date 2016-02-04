@@ -1,0 +1,15 @@
+events.js:141
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: write EPIPE
+    at exports._errnoException (util.js:874:11)
+    at Socket._writeGeneric (net.js:675:26)
+    at Socket._write (net.js:694:8)
+    at doWrite (_stream_writable.js:292:12)
+    at writeOrBuffer (_stream_writable.js:278:5)
+    at Socket.Writable.write (_stream_writable.js:207:11)
+    at Socket.write (net.js:618:40)
+    at Console.log (console.js:36:16)
+    at Object.<anonymous> (D:\learn\nodejsLearn\processModule\child3.js:4:9)
+    at Module._compile (module.js:435:26)
