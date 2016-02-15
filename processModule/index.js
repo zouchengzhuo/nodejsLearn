@@ -478,8 +478,25 @@ function t23(){
 function t24(){
     var child_process=require('child_process');
     var child=child_process.spawn("ipconfig",{
-        stdio:'inherit' //此时用pipe或者ignore就不会在控制台中暑促ipconfig的结果
+        stdio:'inherit' //此时用pipe或者ignore就不会在控制台中输出ipconfig的结果，用inherit会输出
     })
+}
+function t25(){
+    var spawn=require("child_process").spawn;
+    var c1=spawn("ipconfig");
+    var c2=spawn("ipconfig",{
+        stdio:"pipe"
+    });
+    var c3=spawn("ipconfig",{
+        stdio:"ignore"
+    });
+    var c4=spawn("ipconfig",{
+        stdio:"inherit"
+    });
+    //console.log(c1.stdin); // 一个可写流
+    //console.log(c2.stdin); // 一个可写流
+    //console.log(c3.stdin); // null
+    //console.log(c4.stdin); // null c4直接使用父进程的stdout，会在控制台中输出ipcofig的数据
 }
 
 /**
@@ -487,7 +504,7 @@ function t24(){
  * child.unref(); 让父线程退出的时候不等待此子线程
  * TODO 这个demo没懂
  */
-function t25(){
+function t26(){
     var fs = require('fs'),
         spawn = require('child_process').spawn,
         out = fs.openSync('./out.log', 'a'),
@@ -500,4 +517,6 @@ function t25(){
 
     child.unref();
 }
+
+
 t25();
