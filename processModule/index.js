@@ -428,11 +428,14 @@ function t22(){
     child = child_process.spawn('node',["child3.js"], {
         stdio: [
             0, // 子进程使用父进程的stdin
-            'pipe', // 将子进程的stdout pipe到父进程   这个父进程怎么接收呢？奇怪...
+            'pipe', //
             fs.openSync('err.out', 'w') // direct child's stderr to a file
         ]
     });
-
+    child.stdout.setEncoding("utf8")
+    child.stdout.on("data",function(data){
+        console.log(data)
+    })
     //仅仅child.stdout存在，child.stdin和stderr都是null
     assert.equal(child.stdio[0], null);
     assert.equal(child.stdio[0], child.stdin);
@@ -445,6 +448,7 @@ function t22(){
 /**
  * child_process.exec(command[, options], callback)
  * 参数分别是：命令字符，命令执行环境配置对象，回调函数，回调函数提供err对象,stdout buffer,stderr buffer
+ * ！！！注意，这里的stdio和子进程对象的stdout/in/err属性不同，是buffer，子进程对象的属性是stream
  * child_process.execFile(file[, args][, options][, callback])
  * 和child_process.exec大致相同，第二个参数args是一个数组，里边是执行参数
  */
@@ -469,7 +473,7 @@ function t23(){
  * --cwd 字符串，执行路径
  * --env 对象，执行环境参数
  * --stdio 数组或字符串，进程标准io设置：
- * ---- 'pipe' 相当于 ['pipe', 'pipe', 'pipe']，stdin,stdout,stderr均pipe到父进程中，在父进程中可以通过child.stdin/put/err 来访问
+ * ---- 'pipe'  如果不填stdio，默认是pipe  相当于 ['pipe', 'pipe', 'pipe']，stdin,stdout,stderr均pipe到父进程中，在父进程中可以通过child.stdin/put/err 来访问
  * ---- 'ignore' - 相当于['ignore', 'ignore', 'ignore'] 都是null
  * ---- 'inherit' - 相当于[process.stdin, process.stdout, process.stderr] or [0,1,2] 继承，直接使用父进程的stdio
  * ---- *数组中有'ipc'时，会在子进程和父进程之间开启ipc通道通信，此时可以通过child.send给子进程发消息，子进程中也可以监听message消息
@@ -498,13 +502,35 @@ function t25(){
     //console.log(c3.stdin); // null
     //console.log(c4.stdin); // null c4直接使用父进程的stdout，会在控制台中输出ipcofig的数据
 }
+// 这两种写法都是可以的
+function t26(){
+    var spawn=require("child_process").spawn;
+    var netstat=spawn("netstat",["-aon"],{
+        stdio:["ignore","pipe","pipe"]
+    });
+    var findstr=spawn("findstr",["8080"],{
+        stdio:["pipe","pipe","pipe"]
+    });
+    //netstat.stdout.on("data",function(data){
+    //    console.log("netstat",data)
+    //    findstr.stdin.write(data);
+    //});
+    //netstat.stdout.on("end",function(){
+    //    findstr.stdin.end();
+    //});
+    //findstr.stdout.on("data",function(data){
+    //    console.log("findstr",data)
+    //});
+    netstat.stdout.pipe(findstr.stdin);
+    findstr.stdout.pipe(process.stdout);
+}
 
 /**
  * options.detached 让子线程可以独立在父线程之外长时间运行
  * child.unref(); 让父线程退出的时候不等待此子线程
  * TODO 这个demo没懂
  */
-function t26(){
+function t27(){
     var fs = require('fs'),
         spawn = require('child_process').spawn,
         out = fs.openSync('./out.log', 'a'),
@@ -518,5 +544,4 @@ function t26(){
     child.unref();
 }
 
-
-t25();
+t22();
