@@ -1,6 +1,6 @@
 {
   "name": "zoucz",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "邹成卓练习nodejs模块发布",
   "main": "index.js",
   "scripts": {
@@ -10,6 +10,10 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/zouchengzhuo/nodejsLearn.git"
+  },
+  "bin":{
+    "zoucz":"./bin/zoucz.js",
+    "zoucz_err":"./bin/zoucz_err.js"
   },
   "author": "Chengzhuo Zou <405966530@qq.com> (http://zoucz.com)",
   "license": "ISC"

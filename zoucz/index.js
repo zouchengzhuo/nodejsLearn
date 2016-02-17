@@ -7,4 +7,3 @@ exports.author={
     website:"http://zoucz.com",
     company:"tencent"
 }
-console.log(require("util").inspect(exports.author));
