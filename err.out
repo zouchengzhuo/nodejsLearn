@@ -1,0 +1,10 @@
+module.js:442
+    throw err;
+    ^
+
+Error: Cannot find module 'D:\learn\nodejsLearn\child3.js'
+    at Function.Module._resolveFilename (module.js:440:15)
+    at Function.Module._load (module.js:388:25)
+    at Function.Module.runMain (module.js:575:10)
+    at startup (node.js:160:18)
+    at node.js:456:3

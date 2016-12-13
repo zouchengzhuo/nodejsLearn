@@ -1,0 +1,15 @@
+console.error from child3
+D:\learn\nodejsLearn\processModule\child3.js:7
+throw new Error("throw error");
+^
+
+Error: throw error
+    at Object.<anonymous> (D:\learn\nodejsLearn\processModule\child3.js:7:7)
+    at Module._compile (module.js:541:32)
+    at Object.Module._extensions..js (module.js:550:10)
+    at Module.load (module.js:458:32)
+    at tryModuleLoad (module.js:417:12)
+    at Function.Module._load (module.js:409:3)
+    at Function.Module.runMain (module.js:575:10)
+    at startup (node.js:160:18)
+    at node.js:456:3

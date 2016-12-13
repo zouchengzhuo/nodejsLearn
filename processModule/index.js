@@ -317,7 +317,7 @@ function t15(){
     console.log(process.title);
     console.log(process.version);
     console.log(process.versions);
-    process.umask(0022);
+    //process.umask(0022);
     var t=process.uptime();
 
 }
@@ -434,7 +434,7 @@ function t22(){
     });
     child.stdout.setEncoding("utf8")
     child.stdout.on("data",function(data){
-        console.log(data)
+        console.log("=== child process on data ===",data)
     })
     //仅仅child.stdout存在，child.stdin和stderr都是null
     assert.equal(child.stdio[0], null);
