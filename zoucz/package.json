@@ -1,74 +1,21 @@
 {
-  "_args": [
-    [
-      {
-        "name": "zoucz",
-        "raw": "zoucz",
-        "rawSpec": "",
-        "scope": null,
-        "spec": "latest",
-        "type": "tag"
-      },
-      "D:\\learn\\nodejsLearn\\zoucz"
-    ]
-  ],
-  "_cnpm_publish_time": 1455945125242,
-  "_from": "zoucz@latest",
-  "_id": "zoucz@1.0.5",
-  "_inCache": true,
-  "_installable": true,
-  "_location": "/zoucz",
-  "_nodeVersion": "4.2.4",
-  "_npmOperationalInternal": {
-    "host": "packages-9-west.internal.npmjs.com",
-    "tmp": "tmp/zoucz-1.0.5.tgz_1455945122355_0.3233774162363261"
-  },
-  "_npmUser": {
-    "email": "405966530@qq.com",
-    "name": "zoucz"
-  },
-  "_npmVersion": "2.14.12",
-  "_phantomChildren": {},
-  "_requested": {
-    "name": "zoucz",
-    "raw": "zoucz",
-    "rawSpec": "",
-    "scope": null,
-    "spec": "latest",
-    "type": "tag"
-  },
-  "_requiredBy": [
-    "#USER"
-  ],
-  "_resolved": "http://registry.npmjs.org/zoucz/-/zoucz-1.0.5.tgz",
-  "_shasum": "8488b5d14ec9b767a7123dc29f54d73bc4332dee",
-  "_shrinkwrap": null,
-  "_spec": "zoucz",
-  "_where": "D:\\learn\\nodejsLearn\\zoucz",
   "author": {
     "email": "405966530@qq.com",
     "name": "Chengzhuo Zou",
     "url": "http://zoucz.com"
   },
   "bin": {
-    "zoucz": "./bin/zoucz.js",
-    "zoucz_err": "./bin/zoucz_err.js"
+    "zoucz": "./bin/zoucz.js"
   },
   "bugs": {
     "url": "https://github.com/zouchengzhuo/zoucz/issues"
   },
-  "dependencies": {},
-  "description": "a example npm package to Learn npm api",
+  "dependencies": {
+    "commander": "^2.9.0"
+  },
+  "description": "zoucz's command tools",
   "devDependencies": {},
   "directories": {},
-  "dist": {
-    "key": "/zoucz/-/zoucz-1.0.5.tgz",
-    "noattachment": false,
-    "shasum": "8488b5d14ec9b767a7123dc29f54d73bc4332dee",
-    "size": 1103,
-    "tarball": "http://r.tnpm.oa.com/zoucz/download/zoucz-1.0.5.tgz"
-  },
-  "gitHead": "c13e4751aaf3974fa1b385c82cb257e59e670a5a",
   "homepage": "https://github.com/zouchengzhuo/zoucz",
   "license": "ISC",
   "main": "index.js",
@@ -79,15 +26,9 @@
     }
   ],
   "name": "zoucz",
-  "optionalDependencies": {},
-  "publish_time": 1455945125242,
-  "readme": "ERROR: No README data found!",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/zouchengzhuo/zoucz.git"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "version": "1.0.5"
+  "version": "1.1.1"
 }
