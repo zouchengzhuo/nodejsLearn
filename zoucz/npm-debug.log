@@ -1,0 +1,113 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Users\\czzou\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'publish' ]
+2 info using npm@3.9.6
+3 info using node@v6.2.1
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: 'D:\\learn\\nodejsLearn\\zoucz',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory C:\Users\czzou\AppData\Roaming\npm-cache\zoucz\1.1.3\package.tgz not in flight; packing
+9 verbose correctMkdir C:\Users\czzou\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+10 info lifecycle zoucz@1.1.3~prepublish: zoucz@1.1.3
+11 silly lifecycle zoucz@1.1.3~prepublish: no script for prepublish, continuing
+12 verbose tar pack [ 'C:\\Users\\czzou\\AppData\\Roaming\\npm-cache\\zoucz\\1.1.3\\package.tgz',
+12 verbose tar pack   'D:\\learn\\nodejsLearn\\zoucz' ]
+13 verbose tarball C:\Users\czzou\AppData\Roaming\npm-cache\zoucz\1.1.3\package.tgz
+14 verbose folder D:\learn\nodejsLearn\zoucz
+15 verbose addLocalTarball adding from inside cache C:\Users\czzou\AppData\Roaming\npm-cache\zoucz\1.1.3\package.tgz
+16 verbose correctMkdir C:\Users\czzou\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+17 silly cache afterAdd zoucz@1.1.3
+18 verbose afterAdd C:\Users\czzou\AppData\Roaming\npm-cache\zoucz\1.1.3\package\package.json not in flight; writing
+19 verbose correctMkdir C:\Users\czzou\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+20 verbose afterAdd C:\Users\czzou\AppData\Roaming\npm-cache\zoucz\1.1.3\package\package.json written
+21 silly publish { author:
+21 silly publish    { name: 'Chengzhuo Zou',
+21 silly publish      email: '405966530@qq.com',
+21 silly publish      url: 'http://zoucz.com' },
+21 silly publish   bin: { zoucz: './bin/zoucz.js' },
+21 silly publish   bugs: { url: 'https://github.com/zouchengzhuo/zoucz/issues' },
+21 silly publish   dependencies: { commander: '^2.9.0' },
+21 silly publish   description: 'zoucz\'s command tools',
+21 silly publish   devDependencies: {},
+21 silly publish   directories: {},
+21 silly publish   homepage: 'https://github.com/zouchengzhuo/zoucz',
+21 silly publish   license: 'ISC',
+21 silly publish   main: 'index.js',
+21 silly publish   maintainers: [ { name: 'zoucz', email: '405966530@qq.com' } ],
+21 silly publish   name: 'zoucz',
+21 silly publish   repository:
+21 silly publish    { type: 'git',
+21 silly publish      url: 'git+ssh://git@github.com/zouchengzhuo/zoucz.git' },
+21 silly publish   version: '1.1.3',
+21 silly publish   readme: '# 个人命令行工具\r\n这个模块集成了一些小命令行工具。使用前请安装模块：`npm install zoucz -g`\r\n\r\n## ① 文件加解密工具\r\n现在互联网信息泄露太严重了，第三方平台无论有多权威，做的多大，因为某些不可抗力，都不可能完全保护我们的个人隐私——例如百度云会偷偷删除你辛辛苦苦下载的小电影：）\r\n\r\n此命令行工具是为了保护个人文件隐私而存在，可以很方便的用一个只有自己知道的秘钥加密一些需要保密的文件,要查看的时候再解密就行了。这样处理过的文件，任何第三方平台都没办法查看我们的文件了~\r\n\r\n**注意：请记好自己的密码，否则加密后的文件是无法还原的！**\r\n\r\n用法：\r\n\r\n| 操作  |  命令 |\r\n| ------------ | ------------ |\r\n|  加密某个文件 | `zoucz jiami xxx.avi -p yourpassword `  |\r\n| 加密当前目录所有文件(会递归子目录)  |  `zoucz jiami -p yourpassword` |\r\n|  自定义输出目录名称 | `zoucz jiami -p yourpassword -o outputPathName`  |\r\n|  解密 | `zoucz jiami -p yourpassword -j`  |\r\n',
+21 silly publish   readmeFilename: 'readme.md',
+21 silly publish   _id: 'zoucz@1.1.3',
+21 silly publish   scripts: {},
+21 silly publish   _shasum: 'e224797b21beca2f5b84702bd767f2d05493dcfe',
+21 silly publish   _from: '.' }
+22 verbose getPublishConfig undefined
+23 silly mapToRegistry name zoucz
+24 silly mapToRegistry using default registry
+25 silly mapToRegistry registry http://registry.npmjs.org/
+26 silly mapToRegistry data Result {
+26 silly mapToRegistry   raw: 'zoucz',
+26 silly mapToRegistry   scope: null,
+26 silly mapToRegistry   name: 'zoucz',
+26 silly mapToRegistry   rawSpec: '',
+26 silly mapToRegistry   spec: 'latest',
+26 silly mapToRegistry   type: 'tag' }
+27 silly mapToRegistry uri http://registry.npmjs.org/zoucz
+28 verbose publish registryBase http://registry.npmjs.org/
+29 silly publish uploading C:\Users\czzou\AppData\Roaming\npm-cache\zoucz\1.1.3\package.tgz
+30 verbose request uri http://registry.npmjs.org/zoucz
+31 verbose request sending authorization for write operation
+32 info attempt registry request try #1 at 20:50:59
+33 verbose request using bearer token for auth
+34 verbose request id 1c417f4c039f60eb
+35 http request PUT http://registry.npmjs.org/zoucz
+36 http 403 http://registry.npmjs.org/zoucz
+37 verbose headers { 'content-type': 'application/json',
+37 verbose headers   'cache-control': 'max-age=300',
+37 verbose headers   'content-length': '95',
+37 verbose headers   'accept-ranges': 'bytes',
+37 verbose headers   date: 'Tue, 03 Jan 2017 12:51:19 GMT',
+37 verbose headers   via: '1.1 varnish',
+37 verbose headers   connection: 'keep-alive',
+37 verbose headers   'x-served-by': 'cache-nrt6128-NRT',
+37 verbose headers   'x-cache': 'MISS',
+37 verbose headers   'x-cache-hits': '0',
+37 verbose headers   'x-timer': 'S1483447878.715044,VS0,VE668',
+37 verbose headers   vary: 'Accept-Encoding' }
+38 verbose request invalidating C:\Users\czzou\AppData\Roaming\npm-cache\registry.npmjs.org\zoucz on PUT
+39 error publish Failed PUT 403
+40 verbose stack Error: "You cannot publish over the previously published version 1.1.3." : zoucz
+40 verbose stack     at makeError (C:\Users\czzou\AppData\Roaming\npm\node_modules\npm\node_modules\npm-registry-client\lib\request.js:264:12)
+40 verbose stack     at CachingRegistryClient.<anonymous> (C:\Users\czzou\AppData\Roaming\npm\node_modules\npm\node_modules\npm-registry-client\lib\request.js:252:14)
+40 verbose stack     at Request._callback (C:\Users\czzou\AppData\Roaming\npm\node_modules\npm\node_modules\npm-registry-client\lib\request.js:172:14)
+40 verbose stack     at Request.self.callback (C:\Users\czzou\AppData\Roaming\npm\node_modules\npm\node_modules\request\request.js:200:22)
+40 verbose stack     at emitTwo (events.js:106:13)
+40 verbose stack     at Request.emit (events.js:191:7)
+40 verbose stack     at Request.<anonymous> (C:\Users\czzou\AppData\Roaming\npm\node_modules\npm\node_modules\request\request.js:1067:10)
+40 verbose stack     at emitOne (events.js:101:20)
+40 verbose stack     at Request.emit (events.js:188:7)
+40 verbose stack     at IncomingMessage.<anonymous> (C:\Users\czzou\AppData\Roaming\npm\node_modules\npm\node_modules\request\request.js:988:12)
+41 verbose statusCode 403
+42 verbose pkgid zoucz
+43 verbose cwd D:\learn\nodejsLearn\zoucz
+44 error Windows_NT 6.1.7601
+45 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Users\\czzou\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js" "publish"
+46 error node v6.2.1
+47 error npm  v3.9.6
+48 error code E403
+49 error "You cannot publish over the previously published version 1.1.3." : zoucz
+50 error If you need help, you may report this error at:
+50 error     <https://github.com/npm/npm/issues>
+51 verbose exit [ 1, true ]
